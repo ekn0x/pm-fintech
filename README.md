@@ -11,22 +11,31 @@ The skills were written from knowledge of the books and from public standards, n
 
 ## Status
 
+Each skill moves through four stages. Only **Committed** means the files are in this repository.
+
 | Status | Meaning |
 |---|---|
-| **Built** | Built and tested in a working session. Files not committed here yet. |
+| **Committed** | `SKILL.md` and its files are on `main` in this repo. |
+| **Built, not committed** | Built and tested in a working session and delivered as `.skill` or `.zip` files. Not in this repo yet. |
 | **Planned** | Scoped in an earlier plan, not built. |
 | **Proposed** | New in this roadmap. Scope to confirm before building. |
 
-| Branch | Built | Planned | Proposed |
-|---|---|---|---|
-| Product management | 40 | 0 | 0 |
-| Fixed income: foundations and shared | 15 | 1 | 2 |
-| Fixed income: PMS | 0 | 0 | 5 |
-| Fixed income: EMS | 2 | 4 | 3 |
-| Fixed income: OMS | 1 | 0 | 3 |
-| Fixed income: RMS | 0 | 0 | 4 |
-| Fixed income: cross-system review | 0 | 1 | 0 |
-| **Total** | **58** | **6** | **17** |
+A skill is marked Committed only when its folder is on `main`, not when it is built.
+
+| Branch | Committed | Built, not committed | Planned | Proposed |
+|---|---|---|---|---|
+| Product management | 0 | 40 | 0 | 0 |
+| Fixed income: foundations and shared | 0 | 15 | 1 | 2 |
+| Fixed income: PMS | 0 | 0 | 0 | 5 |
+| Fixed income: EMS | 0 | 2 | 4 | 3 |
+| Fixed income: OMS | 0 | 1 | 0 | 3 |
+| Fixed income: RMS | 0 | 0 | 0 | 4 |
+| Fixed income: cross-system review | 0 | 0 | 1 | 0 |
+| **Total** | **0** | **58** | **6** | **17** |
+
+**In the repo now:** this README, `inspired/VERIFY.md` and `transformed/VERIFY.md`. No skills yet.
+
+**Not in the repo yet:** the fixed income knowledge base (built, not committed) and the `VERIFY.md` files for Empowered, Fabozzi and Loved.
 
 ## Skills tree
 
@@ -73,67 +82,67 @@ flowchart LR
 
 | Skill | Job | Status |
 |---|---|---|
-| `inspired-four-risks` | Score value, usability, feasibility and viability risk; pick what to test first | Built |
-| `inspired-discovery-framing` | Opportunity assessment, customer letter or startup canvas, by size of effort | Built |
-| `inspired-discovery-planning` | Story map; customer discovery program (about six reference customers) | Built |
-| `inspired-customer-interviews` | Interview guide and synthesis; concierge tests, customer misbehavior, hack days | Built |
-| `inspired-prototype-design` | Choose and spec the prototype: feasibility, user, live-data, Wizard of Oz | Built |
-| `inspired-discovery-testing` | Usability, value, demand and feasibility tests with criteria set in advance | Built |
-| `inspired-stakeholders-viability` | Stakeholder constraints by function; one-on-one prototype previews | Built |
-| `inspired-outcome-roadmap` | Convert feature roadmaps into problems, outcomes and high-integrity commitments | Built |
-| `inspired-vision-principles` | Product vision, product strategy (market sequencing), product principles | Built |
-| `inspired-team-diagnostic` | Score a team against the failed-effort pattern and strong-team principles | Built |
+| `inspired-four-risks` | Score value, usability, feasibility and viability risk; pick what to test first | Built, not committed |
+| `inspired-discovery-framing` | Opportunity assessment, customer letter or startup canvas, by size of effort | Built, not committed |
+| `inspired-discovery-planning` | Story map; customer discovery program (about six reference customers) | Built, not committed |
+| `inspired-customer-interviews` | Interview guide and synthesis; concierge tests, customer misbehavior, hack days | Built, not committed |
+| `inspired-prototype-design` | Choose and spec the prototype: feasibility, user, live-data, Wizard of Oz | Built, not committed |
+| `inspired-discovery-testing` | Usability, value, demand and feasibility tests with criteria set in advance | Built, not committed |
+| `inspired-stakeholders-viability` | Stakeholder constraints by function; one-on-one prototype previews | Built, not committed |
+| `inspired-outcome-roadmap` | Convert feature roadmaps into problems, outcomes and high-integrity commitments | Built, not committed |
+| `inspired-vision-principles` | Product vision, product strategy (market sequencing), product principles | Built, not committed |
+| `inspired-team-diagnostic` | Score a team against the failed-effort pattern and strong-team principles | Built, not committed |
 
 ### Empowered — Marty Cagan with Chris Jones, *Empowered* (2020) · `empowered/`
 
 | Skill | Job | Status |
 |---|---|---|
-| `strategic-context` | Mission, scorecard, company objectives, vision and strategy as inputs for teams | Built |
-| `product-strategy` | Focus, insights, action, management; produces the problems to assign | Built |
-| `team-objectives` | Assign problems to teams; ambition levels; high-integrity commitments | Built |
-| `empowered-team-check` | Empowered team vs feature team gap analysis | Built |
-| `product-vision-principles` | Draft or critique a vision and product principles | Built |
-| `team-topology` | Platform vs experience teams; ownership, autonomy, alignment | Built |
-| `stakeholder-collaboration` | Collaboration over stakeholder management; evangelism | Built |
-| `decisions-and-meetings` | Decision sizing, disagree and commit, meeting design | Built |
-| `pm-coaching-assessment` | Assess a PM and build a coaching plan | Built |
-| `one-on-one-and-narrative` | Coaching one-on-ones; reviewing written narratives | Built |
-| `product-hiring` | Competence and character; interview loops; remote hires | Built |
-| `people-lifecycle` | Onboarding, bootcamp, reviews, terminating, promoting | Built |
+| `strategic-context` | Mission, scorecard, company objectives, vision and strategy as inputs for teams | Built, not committed |
+| `product-strategy` | Focus, insights, action, management; produces the problems to assign | Built, not committed |
+| `team-objectives` | Assign problems to teams; ambition levels; high-integrity commitments | Built, not committed |
+| `empowered-team-check` | Empowered team vs feature team gap analysis | Built, not committed |
+| `product-vision-principles` | Draft or critique a vision and product principles | Built, not committed |
+| `team-topology` | Platform vs experience teams; ownership, autonomy, alignment | Built, not committed |
+| `stakeholder-collaboration` | Collaboration over stakeholder management; evangelism | Built, not committed |
+| `decisions-and-meetings` | Decision sizing, disagree and commit, meeting design | Built, not committed |
+| `pm-coaching-assessment` | Assess a PM and build a coaching plan | Built, not committed |
+| `one-on-one-and-narrative` | Coaching one-on-ones; reviewing written narratives | Built, not committed |
+| `product-hiring` | Competence and character; interview loops; remote hires | Built, not committed |
+| `people-lifecycle` | Onboarding, bootcamp, reviews, terminating, promoting | Built, not committed |
 
 ### Transformed — Marty Cagan et al., *Transformed* (2024) · `transformed/`
 
 | Skill | Job | Status |
 |---|---|---|
-| `transformed-model-core` | Shared vocabulary: three dimensions of change, five concepts; routes to the others | Built |
-| `transformed-assessment` | Score an org against the product model; rank the top three gaps | Built |
-| `transformed-team-topology` | Review team structure; flag renamed-but-unchanged teams | Built |
-| `transformed-strategy-review` | Test vision, strategy, roadmaps and objectives for outcome focus | Built |
-| `transformed-discovery-check` | Check discovery practice against the four risks | Built |
-| `transformed-delivery-check` | Release frequency, instrumentation, monitoring, deployment; gaps by severity | Built |
-| `transformed-role-competencies` | Evaluate PM, designer, tech lead and product leader competencies | Built |
-| `transformed-plan` | Scope, sequence and phase a transformation | Built |
-| `transformed-objections` | Prepare responses to objections by who raises them | Built |
-| `transformed-evangelism` | Draft transformation communications | Built |
+| `transformed-model-core` | Shared vocabulary: three dimensions of change, five concepts; routes to the others | Built, not committed |
+| `transformed-assessment` | Score an org against the product model; rank the top three gaps | Built, not committed |
+| `transformed-team-topology` | Review team structure; flag renamed-but-unchanged teams | Built, not committed |
+| `transformed-strategy-review` | Test vision, strategy, roadmaps and objectives for outcome focus | Built, not committed |
+| `transformed-discovery-check` | Check discovery practice against the four risks | Built, not committed |
+| `transformed-delivery-check` | Release frequency, instrumentation, monitoring, deployment; gaps by severity | Built, not committed |
+| `transformed-role-competencies` | Evaluate PM, designer, tech lead and product leader competencies | Built, not committed |
+| `transformed-plan` | Scope, sequence and phase a transformation | Built, not committed |
+| `transformed-objections` | Prepare responses to objections by who raises them | Built, not committed |
+| `transformed-evangelism` | Draft transformation communications | Built, not committed |
 
 ### Loved — Martina Lauchengco, *Loved* (SVPG series, 2022) · `loved/`
 
 | Skill | Job | Status |
 |---|---|---|
-| `pmm-market-insight` | Customer and market insight as the base for marketing decisions | Built |
-| `pmm-positioning` | Positioning: market, audience, differentiation | Built |
-| `pmm-messaging` | Messaging built on the positioning | Built |
-| `pmm-asset-review` | Review marketing assets against positioning and messaging | Built |
-| `pmm-gtm-strategy` | Go-to-market strategy, B2B and B2C | Built |
-| `pmm-launch` | Launch planning, including solo-founder and small-team paths | Built |
-| `pmm-sales-enablement` | Sales enablement material and process | Built |
-| `pmm-org` | Product marketing team structure and role | Built |
+| `pmm-market-insight` | Customer and market insight as the base for marketing decisions | Built, not committed |
+| `pmm-positioning` | Positioning: market, audience, differentiation | Built, not committed |
+| `pmm-messaging` | Messaging built on the positioning | Built, not committed |
+| `pmm-asset-review` | Review marketing assets against positioning and messaging | Built, not committed |
+| `pmm-gtm-strategy` | Go-to-market strategy, B2B and B2C | Built, not committed |
+| `pmm-launch` | Launch planning, including solo-founder and small-team paths | Built, not committed |
+| `pmm-sales-enablement` | Sales enablement material and process | Built, not committed |
+| `pmm-org` | Product marketing team structure and role | Built, not committed |
 
 ---
 
 ## Fixed income
 
-### Knowledge base · `fixed-income/kb/` · Built
+### Knowledge base · `fixed-income/kb/` · Built, not committed
 
 The source of truth the skills are generated from: instrument ontology, conventions registry, calculator libraries, FIX dictionaries, workflow state machines and the test suites (each calculator cross-checked against QuantLib, published CME/SIFMA/Treasury values or closed-form results).
 
@@ -141,8 +150,8 @@ The source of truth the skills are generated from: instrument ontology, conventi
 
 | Skill | Covers | Status |
 |---|---|---|
-| `fi-spec-review` | Check a product spec for wrong terminology, missing conventions, undefined calculations and missing edge cases; write QA cases | Built |
-| `fix-protocol-core` | FIX message structure, session layer, rejects, version differences, fixed income fields; parser, builder and validator | Built |
+| `fi-spec-review` | Check a product spec for wrong terminology, missing conventions, undefined calculations and missing edge cases; write QA cases | Built, not committed |
+| `fix-protocol-core` | FIX message structure, session layer, rejects, version differences, fixed income fields; parser, builder and validator | Built, not committed |
 | `fi-router` | Classify a request and send it to the right skill | Planned |
 | `fi-security-master` | Static data model per instrument: identifiers, schedules, call and sink features, factor updates, data quality checks | Proposed |
 | `fi-market-data` | Price sources (evaluated, composite, executable), curve inputs, stale and outlier price checks | Proposed |
@@ -151,19 +160,19 @@ The source of truth the skills are generated from: instrument ontology, conventi
 
 | Skill | Covers | Status |
 |---|---|---|
-| `fi-foundations` | Instrument features, risks, structure of rates | Built |
-| `analytics-core` | Price, yield, accrued interest, total return, duration, convexity; the shared calculation library | Built |
-| `govies-and-money-markets` | Treasuries, agencies, commercial paper, floaters, inflation-linked bonds, non-US sovereigns | Built |
-| `credit-instruments` | Corporates, munis, leveraged loans, structured notes and CLNs, emerging markets, preferreds | Built |
-| `trading-and-financing` | Bond market structure, ETFs, repo and financing | Built |
-| `yield-curve` | Forwards, curve trades, curve dynamics, no-arbitrage models | Built |
-| `valuation-and-rv` | Relative value, embedded options and OAS, convertibles | Built |
-| `credit-analysis` | Corporate and muni credit, Merton model, transition matrices, DTS | Built |
-| `securitized` | Agency MBS, CMOs, RMBS, CMBS, ABS, CLOs, prepayment models | Built |
-| `rates-derivatives` | Futures, swaps, swaptions, caps and floors | Built |
-| `credit-derivatives` | CDS pricing and the standard model | Built |
-| `portfolio-construction` | Indexes, benchmarked portfolios, factor risk, cash-flow matching | Built |
-| `performance-attribution` | Returns and attribution | Built |
+| `fi-foundations` | Instrument features, risks, structure of rates | Built, not committed |
+| `analytics-core` | Price, yield, accrued interest, total return, duration, convexity; the shared calculation library | Built, not committed |
+| `govies-and-money-markets` | Treasuries, agencies, commercial paper, floaters, inflation-linked bonds, non-US sovereigns | Built, not committed |
+| `credit-instruments` | Corporates, munis, leveraged loans, structured notes and CLNs, emerging markets, preferreds | Built, not committed |
+| `trading-and-financing` | Bond market structure, ETFs, repo and financing | Built, not committed |
+| `yield-curve` | Forwards, curve trades, curve dynamics, no-arbitrage models | Built, not committed |
+| `valuation-and-rv` | Relative value, embedded options and OAS, convertibles | Built, not committed |
+| `credit-analysis` | Corporate and muni credit, Merton model, transition matrices, DTS | Built, not committed |
+| `securitized` | Agency MBS, CMOs, RMBS, CMBS, ABS, CLOs, prepayment models | Built, not committed |
+| `rates-derivatives` | Futures, swaps, swaptions, caps and floors | Built, not committed |
+| `credit-derivatives` | CDS pricing and the standard model | Built, not committed |
+| `portfolio-construction` | Indexes, benchmarked portfolios, factor risk, cash-flow matching | Built, not committed |
+| `performance-attribution` | Returns and attribution | Built, not committed |
 
 ### 1 · PMS — portfolio management · `fixed-income/pms/`
 
@@ -183,8 +192,8 @@ Getting the trade done. The Planned skills draw on Harris (*Trading and Exchange
 
 | Skill | Covers | Status |
 |---|---|---|
-| `otc-negotiation` | RFQ one-to-one and one-to-many, list RFQ, portfolio trades; state machines and FIX flows | Built |
-| `otc-pricing` | Indicative, firm and subject quotes; price, yield and spread quoting; spotting | Built |
+| `otc-negotiation` | RFQ one-to-one and one-to-many, list RFQ, portfolio trades; state machines and FIX flows | Built, not committed |
+| `otc-pricing` | Indicative, firm and subject quotes; price, yield and spread quoting; spotting | Built, not committed |
 | `liquidity-and-costs` | Liquidity measures, cost models, pre-trade cost estimates | Planned |
 | `tca-best-execution` | Post-trade TCA, benchmarks, best execution evidence | Planned |
 | `optimal-execution` | Order slicing and scheduling under cost and risk | Planned |
@@ -199,7 +208,7 @@ The order record from decision to settlement.
 
 | Skill | Covers | Status |
 |---|---|---|
-| `otc-order-staging` | OMS-to-EMS staging, care orders, parent and child orders, cancel and replace, fills; order state machine | Built |
+| `otc-order-staging` | OMS-to-EMS staging, care orders, parent and child orders, cancel and replace, fills; order state machine | Built, not committed |
 | `oms-pre-trade-compliance` | Investment guidelines, restricted lists, issuer and concentration limits, rating floors, hard vs soft breaches, overrides | Proposed |
 | `oms-allocations` | Pre- and post-trade allocation, pro-rata partial fills, minimum piece and increment rounding, average price, FIX allocation messages | Proposed |
 | `oms-post-trade` | Confirmation and affirmation, settlement instructions, settlement cycles and fails, regulatory trade reporting | Proposed |
@@ -227,7 +236,7 @@ Monitoring across all systems. Builds on `analytics-core`, `credit-analysis` and
 
 ## Build order
 
-1. **Commit what's built:** the four product sets, the 18 fixed income skills and the knowledge base.
+1. **Commit what is built but not committed:** the four product sets, the 18 fixed income skills and the knowledge base.
 2. **Reference data:** `fi-security-master`, `fi-market-data`. PMS depends on them.
 3. **PMS:** the five proposed skills.
 4. **EMS:** `liquidity-and-costs` and `tca-best-execution`, then the proposed EMS skills, then `optimal-execution` and `market-making`.
