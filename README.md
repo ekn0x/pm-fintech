@@ -24,14 +24,14 @@ A skill is marked Committed only when its folder is on `main`, not when it is bu
 
 | Branch | Committed | Built, not committed | Planned | Proposed |
 |---|---|---|---|---|
-| Product management | 0 | 40 | 0 | 0 |
+| Product management | 0 | 40 | 0 | 1 |
 | Fixed income: foundations and shared | 0 | 15 | 1 | 2 |
 | Fixed income: PMS | 0 | 0 | 0 | 5 |
 | Fixed income: EMS | 0 | 2 | 4 | 3 |
 | Fixed income: OMS | 0 | 1 | 0 | 3 |
 | Fixed income: RMS | 0 | 0 | 0 | 4 |
 | Fixed income: cross-system review | 0 | 0 | 1 | 0 |
-| **Total** | **0** | **58** | **6** | **17** |
+| **Total** | **0** | **58** | **6** | **18** |
 
 **In the repo now:** this README, `inspired/VERIFY.md` and `transformed/VERIFY.md`. No skills yet.
 
@@ -50,6 +50,8 @@ flowchart TD
   PM --> EMP["Empowered · 12"]
   PM --> TRA["Transformed · 10"]
   PM --> LOV["Loved · 8"]
+  PM --> XBK["Cross-book · 1 proposed"]
+  AG --> LOOPS["Product loops · discovery, product, organization, on-ramp"]
 
   FI --> KB["Knowledge base"]
   FI --> SHR["Shared · spec review, FIX, reference data"]
@@ -137,6 +139,16 @@ flowchart LR
 | `pmm-launch` | Launch planning, including solo-founder and small-team paths | Built, not committed |
 | `pmm-sales-enablement` | Sales enablement material and process | Built, not committed |
 | `pmm-org` | Product marketing team structure and role | Built, not committed |
+
+### Cross-book · `product/`
+
+Skills that belong to no single book. They exist because a loop needs a step that none of the four books covers (see [Product loops](#product-loops)).
+
+| Skill | Job | Status |
+|---|---|---|
+| `pm-onramp` | Self-directed ramp for a PM who joins with no context: keeps a context map of seven areas, picks the largest gap, writes the fieldwork assignment, ingests the notes, runs the exit test | Proposed |
+
+`people-lifecycle` covers onboarding from the manager's side. `pm-onramp` is for the person being onboarded, including when no plan was handed to them.
 
 ---
 
@@ -244,6 +256,13 @@ Monitoring across all systems. Builds on `analytics-core`, `credit-analysis` and
 6. **RMS:** limits first, then market, credit and liquidity risk.
 7. **Cross-system:** `fi-router`, `oems-readiness-review`.
 
+Product loops run on a separate track, after step 1:
+
+1. **Output contracts** for the nine Inspired skills in loop 1: fixed fields per artifact.
+2. **`discovery-agent`** on loop 1, with the "Decide" gate rules written down.
+3. **`pm-onramp`** and `onramp-agent`.
+4. **`launch-agent`**, then `product-loop-agent`.
+
 **Inclusion rule.** Each skill is evaluated against the base model on cases built around what it encodes: house conventions, edge cases, recent market facts, multi-step reconciliations. A skill that ties is dropped and its facts stay in the knowledge base. The last fixed income evaluation was a tie (44/45 with and without skills) because its cases were textbook calculations; a harder set is pending.
 
 ---
@@ -259,14 +278,180 @@ An agent is a role that chains skills and tools (MCP servers, simulators, data s
 - Every action is logged.
 - Each agent has its own evaluation set, run before it is used.
 
+### Product loops
+
+The product agents run four loops over one shared set of artifacts. Three are cycles at different speeds; the fourth is an on-ramp that exits into the first.
+
+How every loop runs:
+
+1. Read the state: which artifacts exist, and which are stale.
+2. Pick the box whose inputs exist and whose output is missing or invalidated.
+3. Run it and write the artifact.
+4. Stop at a gate when the box needs a human decision or evidence from the real world.
+
+Reading the tables:
+
+- **Skills** do the box's work.
+- **Auditors** check the box's output. They are not steps. Where two or three books cover the same job, the deeper skill owns the box and the others audit.
+- **World steps** have no skill. A person, or a different agent with tools, does them. The loop halts there. They are dashed in the diagrams.
+
+`stakeholder-collaboration` and `decisions-and-meetings` belong to no box. The controller calls them at any human gate.
+
+#### Loop 1 · discovery (per idea, days to weeks)
+
+```mermaid
+flowchart LR
+  F["Frame, once<br/>inspired-discovery-framing"]
+  R["Rate risks<br/>inspired-four-risks"]
+  P["Plan evidence<br/>inspired-customer-interviews<br/>inspired-discovery-planning"]
+  S["Spec prototype<br/>inspired-prototype-design"]
+  B["Build prototype<br/>no skill"]
+  U["Run sessions<br/>no skill"]
+  T["Read results<br/>inspired-discovery-testing"]
+  V["Check viability<br/>inspired-stakeholders-viability"]
+  D["Decide<br/>human gate"]
+  X["Exit to delivery or stop"]
+  F --> R --> P --> S --> B --> U --> T --> V --> D
+  D -- "loop" --> R
+  D -- "stop or build" --> X
+  classDef world stroke-dasharray: 5 5
+  class B,U,D world
+```
+
+| Box | Skills | Auditors | Artifact out |
+|---|---|---|---|
+| Frame (entry, runs once) | `inspired-discovery-framing` | | Problem, target market, key results |
+| Rate risks | `inspired-four-risks` | `transformed-discovery-check` | Risk table, kill criteria, recommended decision |
+| Plan evidence | `inspired-customer-interviews`, `inspired-discovery-planning` | | Interview guide, story map, reference-customer program |
+| Spec prototype | `inspired-prototype-design` | | Prototype spec for the riskiest assumption |
+| Build prototype | World step | | Prototype |
+| Run sessions | World step. Protocol comes from `inspired-discovery-testing` and `inspired-customer-interviews` | | Raw notes and results |
+| Read results | `inspired-discovery-testing`, `inspired-customer-interviews` (synthesis) | | Readout against the criteria set in "Rate risks" |
+| Check viability | `inspired-stakeholders-viability` | | Constraint table, learnings update |
+| Decide | World step: a human takes the call on the recommendation from `inspired-four-risks` | | Stop, build, or loop back to "Rate risks" |
+
+#### Loop 2 · product (quarterly)
+
+```mermaid
+flowchart LR
+  C["Context check<br/>strategic-context<br/>product-vision-principles"]
+  I["Market insight<br/>pmm-market-insight"]
+  S["Strategy<br/>product-strategy"]
+  O["Objectives<br/>team-objectives<br/>inspired-outcome-roadmap"]
+  D["Discovery<br/>loop 1, per objective"]
+  L["Delivery<br/>no skill"]
+  G["Go to market<br/>six pmm skills"]
+  M["Market results<br/>no skill"]
+  C --> I --> S --> O --> D --> L --> G --> M --> C
+  classDef world stroke-dasharray: 5 5
+  class L,M world
+```
+
+| Box | Skills | Auditors | Artifact out |
+|---|---|---|---|
+| Context check | `strategic-context`; `product-vision-principles` when the vision or principles are missing | `inspired-vision-principles` | Which layers exist (mission through strategy), what to run next |
+| Market insight | `pmm-market-insight` | | Insight brief |
+| Strategy | `product-strategy` | `transformed-strategy-review` | The 2 to 4 problems to solve |
+| Objectives | `team-objectives`, `inspired-outcome-roadmap` | `transformed-strategy-review` | Objectives per team, high-integrity commitments |
+| Discovery | Loop 1, once per objective | | Validated solutions |
+| Delivery | World step | `transformed-delivery-check` | Shipped product |
+| Go to market | `pmm-positioning` → `pmm-messaging` → `pmm-gtm-strategy` → `pmm-launch` → `pmm-sales-enablement`; `pmm-asset-review` as the gate | | Launch |
+| Market results | World step: usage data, win/loss | | Feeds "Context check" and "Market insight" |
+
+#### Loop 3 · organization (twice a year)
+
+```mermaid
+flowchart LR
+  T["Diagnose team<br/>empowered-team-check"]
+  Y["Review topology<br/>team-topology"]
+  A["Assess roles<br/>transformed-role-competencies<br/>pm-coaching-assessment"]
+  K["Coach<br/>one-on-one-and-narrative"]
+  H["Hire<br/>product-hiring"]
+  P["Onboard and review<br/>people-lifecycle"]
+  M["Marketing structure<br/>pmm-org"]
+  X["Transformation branch<br/>five transformed skills"]
+  T --> Y --> A --> K --> H --> P --> M --> T
+  T -- "feature team" --> X --> T
+```
+
+| Box | Skills | Auditors | Artifact out |
+|---|---|---|---|
+| Diagnose team | `empowered-team-check` | `inspired-team-diagnostic`, `transformed-assessment` | Team type, binding constraint, three changes |
+| Review topology | `team-topology` | `transformed-team-topology` | Team boundaries and the trade-offs accepted |
+| Assess roles | `transformed-role-competencies`, `pm-coaching-assessment` | | Scored assessment and coaching plan per person |
+| Coach | `one-on-one-and-narrative` | | One-on-one prep, narrative reviews |
+| Hire | `product-hiring` | | Interview loop, scorecard |
+| Onboard and review | `people-lifecycle` | | Onboarding plan, reviews, promotion cases |
+| Marketing structure | `pmm-org` | | Product marketing roles and structure |
+| Transformation branch (only on "feature team") | `transformed-model-core` → `transformed-assessment` → `transformed-plan` → `transformed-objections` → `transformed-evangelism` | | Transformation plan and communications |
+
+Every box in this loop ends in a world step: the conversation, the interview or the personnel decision is a person's. The skills prepare and document it.
+
+#### On-ramp · new PM with no context (one-off, exits into loop 1)
+
+State is a context map: seven areas (self-assessment, context, product, business, customers, market, team), each scored 0 to 3, with facts, sources and open unknowns.
+
+```mermaid
+flowchart LR
+  E["Self-assess, once<br/>pm-coaching-assessment"]
+  G["Pick biggest gap<br/>pm-onramp"]
+  R["Route to skill<br/>pm-onramp"]
+  W["Write assignment<br/>pm-onramp + routed skill"]
+  F["Fieldwork<br/>no skill"]
+  N["Ingest notes<br/>routed skill"]
+  U["Update context map<br/>pm-onramp"]
+  M["Manager check<br/>no skill"]
+  T["Exit test<br/>pm-onramp"]
+  X["Loop 1 on one low-stakes objective"]
+  E --> G --> R --> W --> F --> N --> U --> M --> T
+  T -- "fail" --> G
+  T -- "pass" --> X
+  classDef world stroke-dasharray: 5 5
+  class F,M world
+```
+
+| Box | Skills | Artifact out |
+|---|---|---|
+| Self-assess (entry, runs once) | `pm-coaching-assessment`, self-rated | Gaps across product knowledge, process skills, people skills |
+| Pick biggest gap | `pm-onramp` (proposed) | The lowest-scored area |
+| Route to skill | `pm-onramp`, using the routing table below | The skill for that area |
+| Write assignment | `pm-onramp` with the routed skill | Questions, who to ask, what to read or use |
+| Fieldwork | World step: calls, using the product, reading data | Raw notes |
+| Ingest notes | The routed skill, in read mode | Facts, sources, unknowns |
+| Update context map | `pm-onramp` | Rescored area |
+| Manager check | World step. The manager's side is `people-lifecycle` | Corrections to the map |
+| Exit test | `pm-onramp` | Pass: loop 1. Fail: next gap |
+
+Routing by area:
+
+| Area | Routed skill |
+|---|---|
+| Context | `strategic-context` |
+| Product | None. `pm-onramp` writes this assignment itself |
+| Business | `inspired-stakeholders-viability` (question table only) |
+| Customers | `inspired-customer-interviews` |
+| Market | `pmm-market-insight`, `pmm-positioning` |
+| Team | `empowered-team-check` |
+
+**What is missing before these loops can run**
+
+- **World boxes.** Nothing in the 40 skills builds, ships, talks to a user or reads usage data. Loop 1 halts three times per pass and loop 2 twice per quarter.
+- **Output contracts.** The skills write prose and tables for a reader. Chaining them needs a fixed set of fields per artifact.
+- **Read mode.** Most skills draft or critique. The on-ramp needs them to extract what exists and list what is missing.
+- **Gate rules.** "Decide" in loop 1 and the on-ramp exit test need written rules. Proposed exit test: every area at 2 or higher, customers at 3, no unknown tagged "blocks a decision", and a cap on passes so the ramp cannot run forever.
+
 ### Product agents
 
-| Agent | Does | Skills |
-|---|---|---|
-| `discovery-agent` | Idea → four risks → framing → test plan → readout | `inspired-*` |
-| `transformation-coach` | Assessment → plan → objection prep → communications | `transformed-*`, `empowered-team-check` |
-| `pm-coach` | Coaching assessment, one-on-one prep, narrative review | `pm-coaching-assessment`, `one-on-one-and-narrative`, `people-lifecycle` |
-| `launch-agent` | Market insight → positioning → messaging → launch plan | `pmm-*` |
+| Agent | Does | Loop | Skills |
+|---|---|---|---|
+| `discovery-agent` | Idea → framing → four risks → test plan → readout → viability | Loop 1 | `inspired-*` |
+| `product-loop-agent` | Controller for the quarterly loop; calls `discovery-agent` per objective and `launch-agent` for go to market | Loop 2 | `strategic-context`, `product-vision-principles`, `product-strategy`, `team-objectives`, `inspired-outcome-roadmap`, `pmm-market-insight` |
+| `launch-agent` | Positioning → messaging → go-to-market → launch plan → enablement | Loop 2, "Go to market" box | `pmm-*` |
+| `pm-coach` | Coaching assessment, one-on-one prep, narrative review | Loop 3, "Assess roles" to "Onboard and review" | `pm-coaching-assessment`, `one-on-one-and-narrative`, `people-lifecycle` |
+| `transformation-coach` | Assessment → plan → objection prep → communications | Loop 3, transformation branch | `transformed-*`, `empowered-team-check` |
+| `onramp-agent` | Runs the on-ramp for a new PM until the exit test passes | On-ramp | `pm-onramp`, `pm-coaching-assessment`, and the routed skills |
+
+Order: `discovery-agent` first (shortest loop, clearest gates), then `onramp-agent` (it exits into loop 1), then `launch-agent`, then `product-loop-agent`, which needs both. The loop 3 agents come last.
 
 ### Fixed income agents
 
@@ -294,6 +479,7 @@ fixed-income/
   shared/                    spec review, FIX, router, reference data
   foundations/               Fabozzi Handbook skills
   pms/  ems/  oms/  rms/
+product/                     cross-book product skills (pm-onramp)
 agents/                      agent definitions (future)
 ```
 
@@ -302,3 +488,6 @@ agents/                      agent definitions (future)
 - **Empowered names have no book prefix.** `team-topology` and `product-vision-principles` sit close to `transformed-team-topology` and `inspired-vision-principles` and may trigger on the same requests. Renaming them `empowered-*` avoids that.
 - ***Loved* is by Martina Lauchengco**, part of the SVPG series, not by Cagan.
 - **Verify files** for Empowered, Fabozzi and Loved get added with their upload.
+- **Box owners in the product loops are a proposal.** Where books overlap (vision, topology, strategy review, team diagnosis, four risks), one skill owns the box and the others audit. Confirm the owners before building `discovery-agent`.
+- **On-ramp exit test and pass cap** are proposed, not agreed.
+- **Ramp length.** Two to three months is attributed to *Inspired* from recall. Check it before it goes into `pm-onramp`.
