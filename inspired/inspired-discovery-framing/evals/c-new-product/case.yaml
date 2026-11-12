@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: c-new-product
+expected_outcome: |
+  The four questions plus a startup canvas. Buyer and user are separate, assumptions are listed apart
+  from open questions with their source and risk category, the value of the solution is called
+  unproven, and no market size, revenue forecast or customer evidence is invented.

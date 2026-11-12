@@ -85,7 +85,7 @@ flowchart LR
 | Skill | Job | Status |
 |---|---|---|
 | `inspired-four-risks` | Score value, usability, feasibility and viability risk; pick what to test first | Built, not committed |
-| `inspired-discovery-framing` | Opportunity assessment, customer letter or startup canvas, by size of effort | Built, not committed |
+| `inspired-discovery-framing` | Opportunity assessment, customer letter or startup canvas, by size of effort | Committed |
 | `inspired-discovery-planning` | Story map; customer discovery program (about six reference customers) | Built, not committed |
 | `inspired-customer-interviews` | Interview guide and synthesis; concierge tests, customer misbehavior, hack days | Built, not committed |
 | `inspired-prototype-design` | Choose and spec the prototype: feasibility, user, live-data, Wizard of Oz | Built, not committed |

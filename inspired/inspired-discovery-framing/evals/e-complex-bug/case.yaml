@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: e-complex-bug
+expected_outcome: |
+  The bug is framed. The cause stays unknown, the material unknowns are listed, any risks are
+  categorized without ranking, and the frame says investigation and remediation go ahead regardless of
+  it.

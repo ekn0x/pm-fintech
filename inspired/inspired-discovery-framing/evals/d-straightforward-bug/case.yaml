@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: d-straightforward-bug
+expected_outcome: |
+  The bug is handled inside the skill and gets a proportionate answer: No framing needed, or a frame
+  of a few lines. Nothing delays the fix.

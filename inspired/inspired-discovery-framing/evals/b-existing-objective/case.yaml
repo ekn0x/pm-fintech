@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: b-existing-objective
+expected_outcome: |
+  The supplied objective is used as given. The frame says which success measures still need
+  clarifying, invents no numbers, and states a status and a discovery call that agree with each other.

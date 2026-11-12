@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: large-effort-gets-letter
+expected_outcome: |
+  The four questions with the supplied numbers marked given, plus a customer letter and a CEO reply
+  whose figures come only from the key results. Buyers and users are separate. Status is Ready for
+  discovery and discovery can proceed.

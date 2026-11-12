@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: h-missing-objective
+expected_outcome: |
+  No objective is invented. Because the person says none has been established, it is recorded as a
+  decision with an owner, the status is Needs alignment, and the discovery call names the decision or
+  the condition without blocking discovery merely for missing information.
