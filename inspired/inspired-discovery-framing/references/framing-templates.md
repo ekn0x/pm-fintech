@@ -2,7 +2,7 @@
 
 Contents: 1. The four questions (every frame), with examples including two bugs · 2. Customer letter (larger efforts) · 3. Startup canvas (new product or business)
 
-The examples show the tags in use. Their figures are invented for illustration; in a real frame every figure is given, calculated, proposed or left empty under the skill's number rules.
+The examples show the tags in use. Their figures are invented for illustration; in a real frame every figure is labelled under the skill's number rules (provenance, derivation, status, as needed) or left empty.
 
 ## 1. The four questions
 
@@ -11,7 +11,7 @@ This is the opportunity assessment. On its own it frames most work; it also open
 | Question | What a good answer looks like |
 |---|---|
 | **Business objective:** which objective is this work meant to serve? | An objective the company or team has already agreed. A result, not the feature. |
-| **Key results:** how will we know we succeeded? | The measure of the outcome, with baseline and target when they were supplied. The team's existing key results if it has them. |
+| **Key results:** how will we know we succeeded? | The team's agreed key results, exactly as supplied, with any activity-based one flagged. A suggested outcome measure goes on its own row, labelled proposed. Baseline and target only when supplied. |
 | **Customer problem:** what problem does this solve for customers? | Written from the customer's side, in a sentence a customer would recognise. |
 | **Target market:** which customers is this for? | A specific segment. In B2B, buyer and user named separately. |
 
@@ -30,15 +30,17 @@ Supplied: "CS wants a bulk-edit screen for vendor records. One mid-market accoun
 | | Answer | Source |
 |---|---|---|
 | Business objective | Reduce churn in mid-market accounts | given: company objective this year, tied to the request by the requester |
-| Key results | Measure: time for a new customer to get its vendor records clean enough to run payments. Baseline: —. Target: —. | measure inferred from the churn reason; numbers unknown |
+| Key results (agreed) | — | unknown: none supplied |
+| Proposed outcome measure | Time for a new customer to get its vendor records clean enough to run payments. Baseline: —. Target: —. | inferred from the churn reason; proposed, not agreed; numbers unknown |
 | Customer problem | People onboarding a new account fix duplicate and outdated vendor records one at a time before they can trust a payment run | inferred from one churned account's stated reason |
 | Target market | User: whoever cleans vendor records in a mid-market account's first months. Buyer: — | user inferred; buyer unknown |
 
 ## Open questions
-| Question | Who can answer | Affects |
-|---|---|---|
-| How long does vendor clean-up take a new account today, and who does it, by role? | Onboarding team | Key result baseline; target market (user) |
-| Who decides on renewal in these accounts? | Account managers | Target market (buyer) |
+| # | Question | Who can answer | Affects |
+|---|---|---|---|
+| Q1 | How long does vendor clean-up take a new account today, and who does it, by role? | Onboarding team | Proposed measure baseline; target market (user) |
+| Q2 | Who decides on renewal in these accounts? | Account managers | Target market (buyer) |
+| Q3 | Does the team have agreed key results for the churn objective, and does this work fall under one? | Whoever sets the team's objectives | Key results |
 
 ## Assumptions and risks
 | Assumption | Source | Risk if false | Category |
@@ -54,7 +56,7 @@ Nothing material identified for feasibility from what was supplied.
 Vendor records after onboarding. Enterprise accounts.
 ```
 
-Whether clean-up really drives churn is not listed as an open question. The request relies on the answer being yes, so it is an assumption and appears once, in that table.
+Whether clean-up really drives churn is recorded once, as an assumption: the request relies on the answer being yes, and the uncertainty stays visible in the *Risk if false* column. It is not repeated as an open question, because discovery, not a person, will answer it.
 
 ### B2C example: objective and numbers given
 
@@ -63,7 +65,7 @@ Supplied: "The CEO wants streaks. Team objective this quarter: week-4 retention 
 | | Answer | Source |
 |---|---|---|
 | Business objective | Improve retention of new users | given: team objective this quarter |
-| Key results | Week-4 retention of new users from 18% to 23% | given |
+| Key results (agreed) | Week-4 retention of new users from 18% to 23% | given: the team's key result this quarter |
 | Customer problem | New users who want a daily habit lose momentum after the first days and don't return | inferred from the request; no evidence supplied |
 | Target market | New users in their first four weeks. A narrower segment (for example those who said they want to practise daily) is — | inferred; narrower segment unknown |
 
@@ -76,7 +78,7 @@ Supplied: "A board member wants a Slack integration."
 | | Answer | Source |
 |---|---|---|
 | Business objective | — | unknown: none supplied |
-| Key results | — | unknown |
+| Key results (agreed) | — | unknown: none supplied |
 | Customer problem | — | unknown: the request names a solution and no customer |
 | Target market | — | unknown |
 
@@ -100,17 +102,17 @@ Supplied: "Several accounts say their scheduled reports sometimes arrive empty. 
 | | Answer | Source |
 |---|---|---|
 | Business objective | — | unknown: none supplied |
-| Key results | — | unknown |
+| Key results (agreed) | — | unknown: none supplied |
 | Customer problem | Customers who rely on scheduled reports sometimes receive an empty one | given: reported by several accounts |
 | Target market | Accounts using scheduled reports; how many are affected is — | given (segment); unknown (extent) |
 
 ## Open questions
-| Question | Who can answer | Affects |
-|---|---|---|
-| How often does it happen, to which accounts, and since when? | Support, engineering | Target market; key results |
-| What do customers do when a report arrives empty, and has anyone acted on one? | Affected accounts | Customer problem |
-| What causes it? | Engineering | Everything downstream of the fix |
-| Which agreed objective does this fall under? | The requester | Business objective |
+| # | Question | Who can answer | Affects |
+|---|---|---|---|
+| Q1 | How often does it happen, to which accounts, and since when? | Support, engineering | Target market; key results |
+| Q2 | What do customers do when a report arrives empty, and has anyone acted on one? | Affected accounts | Customer problem |
+| Q3 | What causes it? | Engineering | Everything downstream of the fix |
+| Q4 | Which agreed objective does this fall under? | The requester | Business objective |
 
 ## Assumptions and risks
 | Assumption | Source | Risk if false | Category |

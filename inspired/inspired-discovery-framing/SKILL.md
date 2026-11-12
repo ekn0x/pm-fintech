@@ -1,6 +1,6 @@
 ---
 name: inspired-discovery-framing
-description: Frame product work before discovery with the three framing techniques from Marty Cagan's Inspired (2nd ed.) - opportunity assessment for most work, customer letter for larger efforts with several goals, startup canvas for a new product or business. Turns a request that arrives as a solution ("build X") or as a bug report into the objective it serves, the measure of success, the customer problem and the target market, with every answer marked given, inferred or unknown and nothing invented, plus open questions, assumptions and their risks. Use whenever someone hands over a feature request, bug report, idea, stakeholder ask or roadmap item and wants to know whether or how to start, asks for an opportunity assessment, problem statement, working-backwards letter or lean canvas, or asks "what problem are we solving" or "how will we know it worked", even if they don't name Cagan. Not for ranking risks or choosing tests (inspired-four-risks), or for story maps and reference customers (inspired-discovery-planning).
+description: Frame product opportunities before discovery, using Marty Cagan's Inspired (2nd ed.) - an opportunity assessment for most work, plus a customer letter for larger efforts or a startup canvas for a new product or business. Turns a feature request, bug report, product idea, stakeholder request or roadmap initiative into the objective it serves, its success measures, the customer problem and the target market, keeping evidence, assumptions and unknowns separate and inventing nothing. Use when someone asks whether or how to start such work, what problem it solves, or how success will be measured. Does not rank risks or choose experiments (inspired-four-risks), or plan detailed discovery (inspired-discovery-planning).
 ---
 
 # Discovery Framing
@@ -21,7 +21,7 @@ Every answer in the frame carries one of three tags.
 
 Three rules:
 
-- **Numbers are never inferred.** They follow their own rules under *Numbers and calculations*. You may name the *measure* for a key result as inferred ("time to first clean payment run") and leave its baseline and target unknown. An invented "from 18% to 23%" looks like data and gets repeated in the next meeting.
+- **Numbers are never inferred.** They follow their own rules under *Numbers and calculations*. You may suggest a *measure* for a key result, tagged inferred and labelled proposed ("time to first clean payment run"), and leave its baseline and target unknown. An invented "from 18% to 23%" looks like data and gets repeated in the next meeting.
 - **The tags say where a statement came from, not whether it is true.** "Given" means the requester said so; a stakeholder's claim is given and still unvalidated. Whether customers have the problem is what discovery finds out. If the person supplied actual evidence (interview notes, usage data, a churn reason on record), cite it in the source.
 - **Do not write an objective to fit the work.** See step 2.
 
@@ -32,10 +32,11 @@ These are three different things. Mixing them produces invented hypotheses and r
 | | What it is | Example |
 |---|---|---|
 | **Unknown** | Missing information. A question, not a claim | "How many traders use the current RFQ workflow?" |
-| **Assumption** | A proposition the work relies on as true without enough validation. It can be given (a stakeholder asserted it) or inferred (the request implies it) | "Traders would prefer automated RFQ execution to manual execution" |
-| **Risk** | What goes wrong if an assumption is false | "If traders don't trust automated execution, adoption won't justify the build" |
+| **Assumption** | A proposition provisionally relied upon as true. It can be given (a stakeholder asserted it) or inferred (the request implies it) | "Traders would prefer automated RFQ execution to manual execution" |
+| **Risk** | A potential adverse consequence if an assumption is false or a relevant condition does not hold | "If traders don't trust automated execution, adoption won't justify the build" |
 
-- An unknown stays a question. It becomes an assumption only when the request or the frame relies on one particular answer to it.
+- An unknown remains an unanswered question. When the work relies on a provisional answer to that question, record the answer separately as an assumption, preserving the underlying uncertainty. An unknown can exist without an assumption, and an assumption need not come from an identified unknown.
+- When an assumption is a provisional answer to an open question, number the question (Q1, Q2…) and cite it in the assumption's source, so the two stay linked without repeating the content.
 - List an assumption only when it is material: the opportunity, or the solution named in the request, depends on it. Not every inference is one, and if nothing is relied on, list nothing.
 - Write each assumption precisely enough to be checked later: who, does or wants what, under which condition. Give its source.
 - Give a risk for an assumption when its being false would hurt in one of Cagan's four categories: **value** (will customers buy or choose to use it), **usability** (can users work out how to use it), **feasibility** (can we build it with the time, skills and technology we have), **viability** (does it work for our business: sales, legal, finance, support and so on).
@@ -43,16 +44,18 @@ These are three different things. Mixing them produces invented hypotheses and r
 
 ## Numbers and calculations
 
-Every number in the frame is one of four classes.
+A number has three separate properties. Label each number with the ones needed to keep it from being misread; most need one or two.
 
-| Class | Meaning |
+| Property | Values |
 |---|---|
-| **given** | Supplied by the person or by a source they pointed to |
-| **calculated** | Derived by arithmetic from disclosed values, with the derivation shown |
-| **proposed** | A target, scenario or estimate that is not established, labelled as such |
-| **unknown** | Can't be determined from what was supplied. Leave it empty |
+| **Provenance:** where it came from | **given** (supplied by the person or a source they pointed to) · **unknown** (not established; leave it empty). Numbers are never inferred |
+| **Derivation:** how it was obtained | supplied directly · **calculated** from disclosed inputs and assumptions · not calculable from what was supplied |
+| **Status:** what standing it has | **established** or **approved**, only when that is explicitly supported · **proposed** or hypothetical · **unvalidated** · unknown |
 
-- A baseline is a fact, so it is given, calculated or unknown, never proposed.
+Examples: "35% adoption target — given, proposed by a stakeholder, not approved". "12.5% success rate — calculated from given inputs". "20% improvement — calculated under a proposed scenario, not an observed result".
+
+- Given is not validated or approved, and calculated is not observed or established. Say so whenever a reader could take it that way.
+- A baseline is a fact, so it is never proposed or hypothetical.
 - Don't volunteer proposed figures. The label is for a figure the person floats without agreement behind it, or one they ask you to suggest. A proposed target is never written as an agreed objective, and an estimate is never written as observed evidence.
 - Calculate only when the result helps the frame. If the inputs are insufficient, the result is unknown.
 - Write out every calculation you show, however simple, so anyone can reproduce it: the inputs with their source, any assumption used, the formula, the values substituted, the intermediate steps, the result with its unit, and the rounding if any. Keeping the frame short never shortens a derivation.
@@ -62,7 +65,7 @@ Every number in the frame is one of four classes.
 Layout, one block per calculation, in a *Calculations* section that exists only when there is one:
 
 ```
-**Success rate** — calculated
+**Success rate** — calculated from given inputs
 Inputs: successful quotes = 15,000,000 (given); total quotes = 120,000,000 (given)
 Assumptions: none
 Formula: success rate = (successful quotes / total quotes) × 100
@@ -70,6 +73,8 @@ Substitution: (15,000,000 / 120,000,000) × 100
 Steps: 15,000,000 / 120,000,000 = 0.125; 0.125 × 100 = 12.5
 Result: 12.5% (exact)
 ```
+
+When an input is a proposed scenario, list it under Assumptions with its status, and say in the Result line that the result is a projection under that scenario, not an observed result.
 
 ## Pick the technique by size
 
@@ -112,7 +117,7 @@ Don't hold the frame back to ask for missing inputs. Write it from what was supp
 
 4. **Answer the four questions** using `references/framing-templates.md`. Rules:
    - The objective is a business or customer result, not the feature. "Launch export" is not an objective.
-   - Key results measure the outcome and say how the team will know it worked. Use the team's existing key results when they were supplied. "Ship by Q2" and "release three reports" measure activity; replace them.
+   - Key results that were supplied are reported exactly as supplied, tagged given, even when they measure activity. Never rewrite, replace or drop them. If one measures delivery or activity ("ship by Q2", "release three reports") rather than a business or customer outcome, say so in its source. Where it helps, add an outcome measure on its own row, tagged inferred and labelled proposed, with its baseline and target unknown unless supplied. If no key results were supplied, they are unknown; never invent one.
    - The customer problem is written from the customer's side, in a sentence the customer would recognise.
    - The target market is specific. "All users" is almost always wrong; name the segment the work is for first. In B2B, name the buyer and the user separately.
 
@@ -149,7 +154,7 @@ Don't hold the frame back to ask for missing inputs. Write it from what was supp
 
 ## Output
 
-The header and the four-question table are always present. Every other section appears only when it has something material in it.
+Whenever framing is performed, the full header and the four-question table are required. Every other section appears only when it has something material in it. The one exception is *No framing needed*, below.
 
 ```
 # Frame: [working name]
@@ -162,13 +167,14 @@ The header and the four-question table are always present. Every other section a
 | | Answer | Source |
 |---|---|---|
 | Business objective | | given / inferred / unknown, and from what |
-| Key results | | |
+| Key results (agreed) | as supplied, or — | given (flag if activity-based) / unknown |
+| Proposed outcome measure | only when useful | inferred from [...]; proposed, not agreed |
 | Customer problem | | |
 | Target market | | |
 
 ## Open questions
-| Question | Who can answer | Affects |
-|---|---|---|
+| # | Question | Who can answer | Affects |
+|---|---|---|---|
 
 ## Assumptions and risks
 | Assumption | Source | Risk if false | Category |
@@ -189,17 +195,18 @@ Scale the frame to the work. A small request may need the header, the table and 
 
 Every unknown or inferred answer in the table must be traceable to an open question, an assumption or a decision. Combine related gaps into one question where that reads better, and put first the questions whose answers would change the frame or the next decision. Never drop a material uncertainty to save space.
 
-For *No framing needed*, return only the title, status and request lines. When corrective action is under way or needed, add one header line: `**Corrective action:** proceeds independently of this frame`.
+For *No framing needed*, return only the title, the status with a concise justification, and the request as received: no discovery call, technique, four-question table or other section. When corrective action is under way or needed, add one header line: `**Corrective action:** proceeds independently of this frame`.
 
 ## Checks before returning
 
-- **A number with no class**, a proposed figure written as agreed, or a calculation with a step missing or an arithmetic error.
+- **A number that could be misread for lack of a label**: given treated as validated or approved, calculated treated as observed, a proposed figure written as agreed. Or a calculation missing an input, its provenance, an assumption, the formula, the substitution, a step, the unit or the rounding, or with an arithmetic error.
 - **The objective restates the feature**, or appeared without being supplied.
-- **Key results measure activity.**
+- **Supplied key results changed, replaced or dropped**, an activity-based one not flagged, a proposed measure presented as agreed, or key results invented when none were supplied.
 - **The target market is everyone.**
 - **The customer letter lists features**, or contains figures that are not in the key results.
 - **The startup canvas has a detailed solution and a vague customer.**
-- **An unknown written as an assumption**, an assumption with no source, or a risk invented to cover a category.
+- **An unknown treated as answered**, a provisional answer relied on but not recorded as an assumption, an assumption with no source or no link to the question it answers, or an assumption or risk invented to fill the output.
+- **A *No framing needed* result carrying the four-question table or other sections**, or a framed result missing the header or the table.
 - **Risks ranked, or tests proposed.**
 - **The status and the discovery call disagree**, or discovery is held up by missing information and not by a decision. Re-apply step 9.
 - **The same gap appears in more than one section**, or a section has nothing material in it.

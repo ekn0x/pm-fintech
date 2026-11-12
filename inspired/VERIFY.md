@@ -100,9 +100,10 @@ Files: `SKILL.md`, `references/framing-templates.md`, `evals/` (nine validation 
 - The source tags (given / inferred / unknown).
 - **Answering the four questions at every size, with the letter or canvas added on top.** The book presents the three techniques as alternatives by size. I think the four answers are implied by framing's purpose, but the book doesn't say to combine them.
 - The limit that figures in the letter come from the key results.
+- Supplied key results are kept exactly as given, activity-based ones are flagged rather than replaced, and any suggested outcome measure sits on its own row labelled proposed. From your brief.
 - The four statuses (No framing needed, Needs alignment, Draft, Ready for discovery), the separate discovery call (Proceed, Proceed conditionally, Requires a prior decision), and the rule that only an open decision holds discovery up. From your brief.
-- The distinction between unknowns, assumptions and risks, and the rule that an unknown is not an assumption. From your brief.
-- The number classes (given, calculated, proposed, unknown) and the full-derivation rule for calculations. From your brief. The limit that the skill doesn't volunteer proposed figures, and that a baseline is never proposed, is my reading of your "never invent baselines or agreed targets".
+- The distinction between unknowns, assumptions and risks: an unknown stays an unanswered question, and a provisional answer the work relies on is recorded separately as an assumption, linked to the question by number. From your briefs.
+- The three number properties (provenance, derivation, status), used only as far as needed to prevent misreading, and the full-derivation rule for calculations. From your briefs. The limit that the skill doesn't volunteer proposed figures, and that a baseline is never proposed, is my reading of your "never invent baselines or agreed targets".
 - Tagging each risk with one of the four categories and the closing line for categories with nothing material.
 - The open-questions, decisions-needed and out-of-scope sections, and "Updating a frame".
 - The startup canvas field list and its order.
