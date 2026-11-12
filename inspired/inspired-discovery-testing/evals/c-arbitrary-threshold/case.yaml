@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: c-arbitrary-threshold
+expected_outcome: |
+  A test plan is returned. The 80% threshold is kept as the PM's and labelled provisional or without a
+  stated basis, the response says what would ground it and what 80% means with six participants,
+  and it does not replace it with a number of its own.

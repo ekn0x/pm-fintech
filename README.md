@@ -89,7 +89,7 @@ flowchart LR
 | `inspired-discovery-planning` | Story map; customer discovery program (about six reference customers) | Built, not committed |
 | `inspired-customer-interviews` | Interview guide and synthesis; concierge tests, customer misbehavior, hack days | Built, not committed |
 | `inspired-prototype-design` | Choose and spec the prototype: feasibility, user, live-data, Wizard of Oz | Built, not committed |
-| `inspired-discovery-testing` | Usability, value, demand and feasibility tests with criteria set in advance | Built, not committed |
+| `inspired-discovery-testing` | Usability, value, demand and feasibility tests with criteria set in advance | Committed |
 | `inspired-stakeholders-viability` | Stakeholder constraints by function; one-on-one prototype previews | Built, not committed |
 | `inspired-outcome-roadmap` | Convert feature roadmaps into problems, outcomes and high-integrity commitments | Built, not committed |
 | `inspired-vision-principles` | Product vision, product strategy (market sequencing), product principles | Built, not committed |

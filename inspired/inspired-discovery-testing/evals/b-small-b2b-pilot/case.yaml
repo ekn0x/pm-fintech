@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: b-small-b2b-pilot
+expected_outcome: |
+  Regular use by the three clients is recognised as real adoption evidence for those clients, reported
+  per account. The response refuses "demand is proven": three selected accounts are not a
+  representative sample, sessions are not independent customers, and the buyer side is untested.

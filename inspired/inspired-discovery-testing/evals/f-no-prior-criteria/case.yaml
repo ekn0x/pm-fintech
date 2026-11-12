@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: f-no-prior-criteria
+expected_outcome: |
+  An exploratory readout. The response does not answer "was it a success" with a pass or fail and does
+  not derive a threshold from the results. Rates are calculated in full, clicks and sign-ups are
+  treated as demonstrated interest, and the response says what a criterion would need next time.

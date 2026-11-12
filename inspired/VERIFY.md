@@ -162,18 +162,63 @@ General practice: the spec template, time-box comparison with production estimat
 
 ## inspired-discovery-testing
 
+Files: `SKILL.md`, `references/test-protocols.md`, `evals/` (eight validation cases: your scenarios A–H). Revised 2026-11-12 (v2) from your brief: six kinds of evidence and a strength rating for every readout, three operating modes, thresholds that need a stated basis, four decisions, descriptive numbers kept apart from inferential claims, an experiment gate with design and analysis checklists, full derivations, safeguards for customer-facing tests. Run on 2026-11-12 on claude-opus-5-5 and graded by me by hand against the case graders: 52 of 52 with the skill on its final text; 42 to 45 of 52 without it, depending on how three borderline graders are read. Not run through the eval harness and not graded independently. Three fixes came out of the runs: the provisional-label rule, the interval-reading table for experiments, and the short readout as the default for small results.
+
+### A. Taken from the book
+
 | Claim | Confidence | Where to check |
 |---|---|---|
-| Testing usability, value, feasibility (and viability) as separate test types | High | Part IV, "Discovery Testing Techniques" |
-| Usability test protocol: tell them it's a prototype, think aloud, don't help, record pass / struggle / fail per task | Medium-High | "Testing Usability" |
-| Value test right after usability, in the same session | Medium-High | "Testing Value" / qualitative chapter |
+| Usability, value, feasibility and viability are tested separately | High | Part IV, "Discovery Testing Techniques" |
+| Usability session: tell them it is a prototype, give realistic tasks, don't help, turn their questions back, record easy / struggled / failed per task | Medium-High | "Testing Usability" |
+| Fix problems between sessions; don't wait for the round to end | Medium-High | Same |
+| The product manager and designer attend every session; an engineer when possible | Medium-High | Same |
+| Testing in the participant's own setting shows context | Medium | Same |
+| Value test straight after the usability tasks, in the same session | Medium-High | "Testing Value" / qualitative chapter |
 | Value signals: money, reputation, time, access | Medium | Qualitative value testing chapter |
-| Demand testing: fake door and landing page; care with enterprise customers | Medium-High | "Demand Testing Techniques" |
-| Quantitative value testing: A/B, invite-only, discovery program customers | Medium-High | "Quantitative Value Testing Techniques" |
-| Feasibility questions list (skills, time, architecture, dependencies, performance, cost) | Medium | "Testing Feasibility" |
-| Analytics categories (behavior, business, financial, performance, operational and go-to-market cost, sentiment) | Low-Medium | Quantitative testing chapter. Check the exact list |
+| Demand tests: fake door and landing page, with an honest page behind them | Medium-High | "Demand Testing Techniques" |
+| Quantitative value testing: A/B tests, invite-only tests, discovery-program customers | Medium-High | "Quantitative Value Testing Techniques" |
+| The discovery program has succeeded when its customers run the product in production and act as references | High | "Customer Discovery Program Technique" |
+| Feasibility: engineers need time to investigate; the question list (know-how, skills, time, architecture, components and dependencies, performance, scale, infrastructure, cost) | Medium | "Testing Feasibility" |
+| Feasibility is the tech lead's risk | High | Part II, "The Engineers" |
+| Analytics categories (behavior, business, financial, performance, operational and go-to-market cost, sentiment) | Low-Medium | Quantitative testing chapter or the analytics material. Check the exact list |
+| Protect customers, revenue and reputation while testing | Medium | I recall a section on testing responsibly in risk-averse companies. Only the general advice is attributed; the rules in section 10 are mine |
 
-General practice: 5–8 participants per round, pre-registered criteria templates, readout format, A/B guardrails and sample-size discipline, examples.
+### B. Mine or yours, not the book's
+
+- The six kinds of evidence, the three classes of result (qualitative, descriptive quantitative, inferential or causal) and the five readout questions. From your brief. The quality-check table, the four strength words (strong, moderate, weak, none) and the list of alternative explanations are mine.
+- The three modes, the authorization rule for customer-facing actions, and the ban on invented results. From your brief. "Simulated users are not evidence" is mine.
+- Thresholds need a stated basis; the six bases; exploratory readouts when no criteria were set; the retrospective label. From your brief. Two rules are mine: "provisional is a label, not a basis" (added after the first test round, where the model wrote "5 of 7" and called it provisional), and "criteria from more than one place: show both".
+- The four decisions and the five-way diagnosis of a miss. From your brief. Scoping the decision to the hypothesis and not the idea is my reading of it.
+- The experiment gate, the design table, the analysis steps and the alternatives table. The checklist items are from your brief; the gate, the interval-reading table and the alternatives are mine.
+- Every formula, the three worked blocks, α = 0.05 and power = 0.80 as conventions, the sample-ratio threshold of p < 0.001, and the "fewer than about 10" rule of thumb for normal approximations. Standard statistics.
+- The three feasibility states. From your brief. Security and operational constraints are added to the book's question list.
+- The version log, the definition of a material change, and per-version reporting. From your brief.
+- The recruitment-route bias table and sizing by method.
+- Section 10 (customer-facing safeguards).
+- The templates, the execution-artifact list, both examples (invented) and the validation cases.
+
+### C. Where the skill departs from the book, flagged
+
+- **The access signal.** As I recall, the book's example of access is asking for the login credentials of the product the user would switch from. The skill forbids collecting credentials and redefines access as the customer starting an authorized, secure process. From your brief.
+- **Quantitative techniques are split.** The book groups A/B tests, invite-only tests and discovery-program use as quantitative value testing. The skill keeps all three and says only a randomized experiment supports a causal claim; use by selected customers is behavioral and descriptive. v1's "treat their production use as the quantitative evidence" is removed.
+- **Think-aloud is optional.** v1 made it part of the protocol and attributed it to the book.
+- **No participant count.** v1's "5–8 per round" (general practice, never the book's) is removed. Sizing follows the method.
+- **Cheapest credible test.** v1 said "as cheaply as possible".
+- **Demand tests carry more checks** than the book's treatment: trust and brand, account-owner agreement, nothing a customer relies on implying availability.
+
+### Not carried over from my earlier review
+
+- User test vs product demo vs walkthrough (I recall this from "Testing Business Viability"). The skill has one line: reactions to a demo are stated preference at best.
+- "Ask how they solve it today before showing the prototype" is in the session script. Low-Medium that the book puts it there.
+
+### Questions to answer with your copy
+
+1. Does the qualitative value chapter's access example involve login credentials? If it does, the departure in C stands as written. If not, drop the first bullet of C.
+2. Does "Testing Usability" ask participants to think aloud, or only tell the moderator to keep quiet?
+3. Does the book call discovery-program use quantitative evidence, or only list it among the techniques?
+4. Is there a section on testing responsibly, and what does it list?
+5. Where is the analytics category list, and does mine match?
+6. Does the feasibility question list match?
 
 ## inspired-stakeholders-viability
 

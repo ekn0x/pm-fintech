@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: d-underpowered-ab-test
+expected_outcome: |
+  The response shows, with a full derivation, that detecting 1 percentage point from a 12% baseline
+  needs roughly 17,200 users per arm against 9,450 available in three weeks, says what an underpowered
+  test would and would not show, and recommends a credible alternative. It launches nothing.

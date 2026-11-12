@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: a-usability-vs-value
+expected_outcome: |
+  The usability result is reported for the five participants and kept separate from value. Liking and
+  "would use it" are treated as stated preference. The response does not say the idea, its value or
+  demand is validated, gives no pass or fail because no criteria were set, and proposes a value test next.
